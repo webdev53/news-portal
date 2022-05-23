@@ -100,15 +100,39 @@
   </div>
 </div>
 
+{{-- above search - 1 --}}
+@if($home_ad_data->above_search_ad_one_status == 'Show')
 <div class="ad-section-2">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <a href=""><img src="uploads/ad-1.png" alt=""></a>
+        @if($home_ad_data->above_search_ad_one_url=='')
+          <img src="{{ asset('uploads/'.$home_ad_data->above_search_ad_one) }}" alt="">
+        @else
+          <a href="{{ $home_ad_data->above_search_ad_one_url }}" target="_blank"><img src="{{ asset('uploads/'.$home_ad_data->above_search_ad_one) }}" alt=""></a>
+        @endif
       </div>
     </div>
   </div>
 </div>
+@endif
+
+{{-- above search - 2 --}}
+@if($home_ad_data->above_search_ad_two_status == 'Show')
+<div class="ad-section-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        @if($home_ad_data->above_search_ad_two_url=='')
+          <img src="{{ asset('uploads/'.$home_ad_data->above_search_ad_two) }}" alt="">
+        @else
+          <a href="{{ $home_ad_data->above_search_ad_two_url }}" target="_blank"><img src="{{ asset('uploads/'.$home_ad_data->above_search_ad_two) }}" alt=""></a>
+        @endif
+      </div>
+    </div>
+  </div>
+</div>
+@endif
 
 <div class="search-section">
   <div class="container">
@@ -535,10 +559,11 @@
       <div class="col-lg-4 col-md-6 sidebar-col">
         <div class="sidebar">
 
-          <div class="widget">
-            <div class="ad-sidebar">
+
+          <div class="widget widget-down">
+            {{-- <div class="ad-sidebar"> --}}
               <a href=""><img src="uploads/ad-3.png" alt=""></a>
-            </div>
+            {{-- </div> --}}
           </div>
 
           <div class="widget">
@@ -791,10 +816,10 @@
             </div>
           </div>
 
-          <div class="widget">
-            <div class="ad-sidebar">
+          <div class="widget widget-down">
+            {{-- <div class="ad-sidebar"> --}}
               <a href=""><img src="uploads/ad-3.png" alt=""></a>
-            </div>
+            {{-- </div> --}}
           </div>
 
           <div class="widget">
@@ -936,14 +961,38 @@
 
 
 
+{{-- above footer - 1 --}}
+@if($home_ad_data->above_footer_ad_one_status == 'Show')
 <div class="ad-section-3">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <a href=""><img src="uploads/ad-1.png" alt=""></a>
+        @if($home_ad_data->above_footer_ad_one_url=='')
+          <img src="{{ asset('uploads/'.$home_ad_data->above_footer_ad_one) }}" alt="">
+        @else
+          <a href="{{ $home_ad_data->above_footer_ad_one_url }}" target="_blank"><img src="{{ asset('uploads/'.$home_ad_data->above_footer_ad_one) }}" alt=""></a>
+        @endif
       </div>
     </div>
   </div>
 </div>
+@endif
+
+{{-- above footer - 2 --}}
+@if($home_ad_data->above_footer_ad_two_status == 'Show')
+<div class="ad-section-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        @if($home_ad_data->above_footer_ad_two_url=='')
+          <img src="{{ asset('uploads/'.$home_ad_data->above_footer_ad_two) }}" alt="">
+        @else
+          <a href="{{ $home_ad_data->above_footer_ad_two_url }}" target="_blank"><img src="{{ asset('uploads/'.$home_ad_data->above_footer_ad_two) }}" alt=""></a>
+        @endif
+      </div>
+    </div>
+  </div>
+</div>
+@endif
 
 @endsection

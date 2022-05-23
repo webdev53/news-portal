@@ -35,8 +35,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul>
-                            <li class="today-text">Today: January 20, 2022</li>
-                            <li class="email-text">contact@arefindev.com</li>
+                            <li class="today-text">Today: 23rd May, 2022</li>
+                            <li class="email-text">contact@datashark.com</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
@@ -70,10 +70,29 @@
                         </div>
                     </div>
                     <div class="col-md-8">
+                      @if($global_top_ad_data->top_ad_one_status == 'Show')
                         <div class="ad-section-1">
-                            <a href=""><img src="uploads/ad-1.png" alt=""></a>
+                          @if($global_top_ad_data->top_ad_one_url == '')
+                            <img src="{{ asset('uploads/'.$global_top_ad_data->top_ad_one) }}" alt="">
+                          @else
+                          <a href="{{ $global_top_ad_data->top_ad_one_url }}" target="_blank"><img src="{{ asset('uploads/'.$global_top_ad_data->top_ad_one) }}" alt=""></a>
+                          @endif
                         </div>
+                      @endif
                     </div>
+
+                    <div class="col-md-8">
+                      @if($global_top_ad_data->top_ad_two_status == 'Show')
+                        <div class="ad-section-1">
+                          @if($global_top_ad_data->top_ad_two_url == '')
+                            <img src="{{ asset('uploads/'.$global_top_ad_data->top_ad_two) }}" alt="">
+                          @else
+                          <a href="{{ $global_top_ad_data->top_ad_two_url }}" target="_blank"><img src="{{ asset('uploads/'.$global_top_ad_data->top_ad_two) }}" alt=""></a>
+                          @endif
+                        </div>
+                      @endif
+                    </div>
+
                 </div>
             </div>
         </div>
