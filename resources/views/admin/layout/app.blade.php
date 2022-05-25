@@ -32,7 +32,7 @@
                 <div class="section-header">
                     <h1>@yield('heading')</h1>
                     <div class="ml-auto">
-
+                      @yield('button')
                     </div>
                 </div>
 
