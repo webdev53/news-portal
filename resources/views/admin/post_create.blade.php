@@ -21,11 +21,18 @@
 
               <div class="form-group mb-3">
                 <label>Post Title *</label>
-                <input type="text" class="form-control" name="Post_title" value="">
+                <input type="text" class="form-control" name="post_title" value="">
               </div>
               <div class="form-group mb-3">
                 <label>Post Detail *</label>
                 <textarea name="post_detail" class="form-control snote" id="" cols="30" rows="10"></textarea>
+              </div>
+
+              <div class="form-group mb-3">
+                <label>Post Photo *</label>
+               <div>
+                  <input type="file" class="form-control" name="post_photo">
+               </div>
               </div>
 
               <div class="form-group mb-3">
