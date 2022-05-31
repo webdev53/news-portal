@@ -67,4 +67,20 @@ class AdminPostController extends Controller
 
       return redirect()->route('admin_post_show')->with('success', 'Post is created successfully');
     }
+
+    public function edit($id){
+
+      $sub_categories = SubCategory::with('rCategory')->get();
+      $existing_tags = Tag::where('post_id', $id)->get();
+      $post_single = Post::where('id', $id)->first();
+      return view('admin.post_edit', compact('post_single', 'sub_categories', 'existing_tags'));
+    }
+
+    public function delete_tag($id, $id1){
+      
+
+      $tag = Tag::where('id', $id)->first();
+      $tag->delete();
+      return redirect()->route('admin_post_edit', $id1)->with('success', 'Tag is deleted successfully');
+    }
 }

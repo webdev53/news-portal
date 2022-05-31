@@ -90,3 +90,6 @@ Route::post('/admin/post/store', [AdminPostController::class, 'store'])->name('a
 Route::get('admin/post/edit/{id}', [AdminPostController::class, 'edit'])->name('admin_post_edit')->middleware('admin:admin');
 Route::post('/admin/post/update/{id}', [AdminPostController::class, 'update'])->name('admin_post_update');
 Route::get('/admin/post/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete')->middleware('admin:admin');
+
+// delete tag
+Route::get('/admin/post/tag/delete/{id}/{id1}', [AdminPostController::class, 'delete_tag'])->name('admin_post_delete_tag')->middleware('admin:admin');
