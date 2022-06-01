@@ -58,14 +58,22 @@ class AdminPostController extends Controller
     $post->author_id = 0;
     $post->save();
 
+    if($request->tags != ''){
+    $tags_array_new = [];
     $tags_array = explode(',', $request->tags);
+    for($i=0; $i<count($tags_array); $i++){
+      $tags_array_new[] = trim($tags_array[$i]);
+    }
+    $tags_array_new = array_values(array_unique($tags_array_new));
 
-    for ($i = 0; $i < count($tags_array); $i++) {
+    for ($i = 0; $i < count($tags_array_new); $i++) {
+
       $tag = new Tag();
       $tag->post_id = $ai_id;
-      $tag->tag_name = trim($tags_array[$i]);
+      $tag->tag_name = trim($tags_array_new[$i]);
       $tag->save();
     }
+  }
 
 
     return redirect()->route('admin_post_show')->with('success', 'Post is created successfully');
@@ -123,15 +131,33 @@ class AdminPostController extends Controller
     $post->author_id = 0;
     $post->update();
 
+    if($request->tags != ''){
     $tags_array = explode(',', $request->tags);
 
     for ($i = 0; $i < count($tags_array); $i++) {
-      $tag = new Tag();
-      $tag->post_id = $id;
-      $tag->tag_name = trim($tags_array[$i]);
-      $tag->save();
+
+      $total = Tag::where('post_id', $id)->where('tag_name', trim($tags_array[$i]))->count();
+
+      if(!$total){
+        $tag = new Tag();
+        $tag->post_id = $id;
+        $tag->tag_name = trim($tags_array[$i]);
+        $tag->save();
+      }
     }
+  }
 
     return redirect()->route('admin_post_show')->with('success', 'Post is updated successfully');
+  }
+
+  public function delete($id)
+  {
+    $post = Post::where('id', $id)->first();
+    unlink(public_path('uploads/'.$post->post_photo));
+    $post->delete();
+
+    Tag::where('post_id', $id)->delete();
+
+    return redirect()->route('admin_post_show')->with('success', 'Post is deleted successfully');
   }
 }
