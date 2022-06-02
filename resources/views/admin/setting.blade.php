@@ -10,8 +10,8 @@
       <div class="card">
         <div class="card-body">
 
-          <form action="" method="post" enctype="multipart/form-data">
-
+          <form action="{{ route('admin_setting_update') }}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="row">
               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -30,7 +30,7 @@
                   <div class="pt_0 tab-pane fade show active" id="v-1" role="tabpanel" aria-labelledby="v-1-tab">
                     <!-- Home page Start -->
                     <div class="form-group mb-3">
-                      <label>News Ticker Items</label>
+                      <label>News Ticker Items *</label>
                       <input type="text" class="form-control" name="news_ticker_total" value="{{ $setting_data->news_ticker_total }}">
                     </div>
                     <div class="form-group mb-3">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group mb-3">
                       <label>Status</label>
-                      <select name="recaptcha_status" class="form-control">
+                      <select name="" class="form-control">
                         <option value="Show">Show</option>
                         <option value="Hide">Hide</option>
                       </select>

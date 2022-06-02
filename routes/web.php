@@ -97,3 +97,4 @@ Route::get('/admin/post/tag/delete/{id}/{id1}', [AdminPostController::class, 'de
 
 // news ticker setting
 Route::get('/admin/setting', [AdminSettingController::class, 'index'])->name('admin_setting')->middleware('admin:admin');
+Route::post('/admin/setting/update', [AdminSettingController::class, 'update'])->name('admin_setting_update');
