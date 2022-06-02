@@ -11,6 +11,8 @@
 
                     <li class="{{ Request::is('admin/home') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_home') }}"><i class="fas fa-columns"></i> <span>Dashboard</span></a></li>
 
+                    <li class="{{ Request::is('admin/setting') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_setting') }}"><i class="fas fa-cogs"></i> <span>Setting</span></a></li>
+
                     <li class="nav-item dropdown {{ Request::is('admin/top-advertisement') || Request::is('admin/home-advertisement') || Request::is('admin/sidebar-advertisement-*') ? 'active' : '' }}">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-ad"></i><span>Advertisements</span></a>
                         <ul class="dropdown-menu">

@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminAdvertisementController;
 use App\Http\Controllers\Admin\AdminSubCategoryController;
 use App\Http\Controllers\Admin\AdminPostController;
+use App\Http\Controllers\Admin\AdminSettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,3 +94,6 @@ Route::get('/admin/post/delete/{id}', [AdminPostController::class, 'delete'])->n
 
 // delete tag
 Route::get('/admin/post/tag/delete/{id}/{id1}', [AdminPostController::class, 'delete_tag'])->name('admin_post_delete_tag')->middleware('admin:admin');
+
+// news ticker setting
+Route::get('/admin/setting', [AdminSettingController::class, 'index'])->name('admin_setting')->middleware('admin:admin');
