@@ -19,10 +19,10 @@
                     aria-selected="true">
                     Home Page
                   </a>
-                  <a class="nav-link" id="v-2-tab" data-toggle="pill" href="#v-2" role="tab" aria-controls="v-2"
+                  {{-- <a class="nav-link" id="v-2-tab" data-toggle="pill" href="#v-2" role="tab" aria-controls="v-2"
                     aria-selected="false">
                     Text Item
-                  </a>
+                  </a> --}}
                 </div>
               </div>
               <div class="col-xl-10 col-lg-9 col-md-8 col-sm-12">
@@ -43,7 +43,7 @@
                     <!-- Home page End -->
                   </div>
 
-                  <div class="pt_0 tab-pane fade" id="v-2" role="tabpanel" aria-labelledby="v-2-tab">
+                  {{-- <div class="pt_0 tab-pane fade" id="v-2" role="tabpanel" aria-labelledby="v-2-tab">
                     <!-- Text Item Start -->
                     <div class="form-group mb-3">
                       <label>Text</label>
@@ -57,7 +57,7 @@
                       </select>
                     </div>
                     <!-- Text Item End -->
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>
