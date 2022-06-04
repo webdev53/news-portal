@@ -204,6 +204,10 @@
       <div class="col-lg-8 col-md-6 left-col">
         <div class="left">
 
+          {{-- @foreach($sub_category_data as $item)
+            {{ $item->sub_category_name; }}<br>
+          @endforeach --}}
+
           <!-- News Of Category -->
           <div class="news-total-item">
             <div class="row">

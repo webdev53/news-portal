@@ -31,6 +31,14 @@
                   <option value="Hide" @if($sub_category_single->show_on_menu == 'Hide') selected @endif>Hide</option>
                 </select>
               </div>
+
+              <div class="form-group mb-3">
+                <label>Show on Home</label>
+                <select name="show_on_home" class="form-control" id="">
+                  <option value="Show" @if($sub_category_single->show_on_home == 'Show') selected @endif>Show</option>
+                  <option value="Hide" @if($sub_category_single->show_on_home == 'Hide') selected @endif>Hide</option>
+                </select>
+              </div>
               
               <div class="form-group mb-3">
                 <label>Sub Category Order *</label>
