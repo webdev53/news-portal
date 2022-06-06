@@ -587,6 +587,14 @@ a:hover {
     content: "\f073";
 }
 
+.home-content .left .news-total-item .left-side .post-short-text {
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .home-content .left .news-total-item .right-side-item {
     margin-bottom: 0px;
     display: flex;
