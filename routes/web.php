@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminAdvertisementController;
 use App\Http\Controllers\Admin\AdminSubCategoryController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminSettingController;
+use App\Http\Controllers\Front\SubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ use App\Http\Controllers\Admin\AdminSettingController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/news-detail/{id}', [PostController::class, 'detail'])->name('news_detail');
+Route::get('/category/{id}', [SubCategoryController::class, 'index'])->name('category');
 
 
 
